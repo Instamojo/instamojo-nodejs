@@ -9,7 +9,8 @@ var API = {
   'createPayment' : 'payment-requests/',
   'links'         : 'links/',
   'paymentStatus' : 'payment-requests/',
-  'refunds'       : 'refunds/'
+  'refunds'       : 'refunds/',
+  'payments'      : 'payments/'
 };
 
 module.exports = {
@@ -74,10 +75,10 @@ module.exports = {
     });
   },
 
-  getPaymentDetails: function(payment_request_id, payment_id, callback) {
+  getPaymentDetails: function(payment_id, callback) {
     request.get({
       headers : this.HEADERS,
-      url     : HOSTS[this.CURRENT_HOST] + API.paymentStatus + payment_request_id + '/' + payment_id + '/'
+      url     : HOSTS[this.CURRENT_HOST] + API.payments + '/' + payment_id + '/'
     }, function(error, response, body){
       var result = JSON.parse(body);
       callback(error, result);
