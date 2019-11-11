@@ -1,14 +1,14 @@
 {
-  "name": "instamojo-nodejs",
-  "version": "0.0.5",
-  "description": "Instamojo API Wrapper",
+  "name": "instamojo-nodejs-beta",
+  "version": "0.0.6",
+  "description": "Instamojo API Wrapper with working payments api",
   "main": "instamojo.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/sidhantpanda/instamojo-nodejs.git"
+    "url": "git+https://github.com/negati-ve/instamojo-nodejs.git"
   },
   "keywords": [
     "instamojo",
@@ -16,10 +16,10 @@
     "gateway",
     "node"
   ],
-  "author": "Sidhant Panda <sidhantpanda@gmail.com> (http://hashexclude.com)",
+  "author": "zeeshan <zeeshanm1010@gmail.com>",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/sidhantpanda/instamojo-nodejs/issues"
+    "url": "https://github.com/negati-ve/instamojo-nodejs/issues"
   },
   "homepage": "https://github.com/sidhantpanda/instamojo-nodejs#readme",
   "devDependencies": {
