@@ -3,7 +3,7 @@ jobs:
     build:
         working_directory: ~/tmp
         docker:
-            - image: circleci/node12
+            - image: circleci/node:lts
         steps:
             - checkout
             - run: 
