@@ -2,7 +2,7 @@
   "name": "instamojo-nodejs",
   "version": "1.0.0",
   "description": "Instamojo API Wrapper",
-  "main": "instamojo.js",
+  "main": "lib/Instamojo.js",
   "scripts": {
     "test": "jest --env=node"
   },
@@ -22,7 +22,7 @@
       "email": "vinayaksarawagi25@gmail.com"
     }
   ],
-  "license": "ISC",
+  "license": "MIT",
   "homepage": "https://github.com/Instamojo/instamojo-nodejs",
   "devDependencies": {
     "jest": "^25.1.0"
