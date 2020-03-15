@@ -45,7 +45,7 @@ describe('Test suite for refunds service', () => {
     test('GET: Refund Detail', () => {
         return mojomock.authenticate()
             .then(mojo => {
-                let params = { id : 'C030356608' }
+                let params = { id : 'R0312ONS85032' }
                 return mojo.refunds.getDetail(params)
                     .then(res => {
                         expect(res.status).toEqual(200)

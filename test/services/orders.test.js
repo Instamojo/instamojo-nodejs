@@ -17,7 +17,6 @@ describe('Test suite for orders service', () => {
                 }
                 return mojo.orders.create(params)
                     .then(res => {
-                        console.log(res.data)
                         expect(res.status).toEqual(201)
                         expect(res.data).toEqual(expect.objectContaining({
                             order : expect.objectContaining({
@@ -51,13 +50,19 @@ describe('Test suite for orders service', () => {
     test('CREATE: Order for payment request', () => {
         return mojomock.authenticate()
             .then(mojo => {
-                return mojo.orders.createForPaymentRequest({
-                    id : 'xxxxx'
-                }).then(res => {
-                    expect(res.status).toEqual(200)
-                    expect(res.data).toEqual(expect.objectContaining({
-                        order_id      : expect.any(String),
-                    }))
+                return mojo.payments.createRequest({
+                    amount : '100000',
+                    purpose : 'Jest Integration Testing',
+                })
+                .then(res => {
+                    return mojo.orders.createForPaymentRequest({
+                        id: res.data.id,
+                    }).then(res => {
+                        expect(res.status).toEqual(200)
+                        expect(res.data).toEqual(expect.objectContaining({
+                            order_id: expect.any(String),
+                        }))
+                    })
                 })
             })
     })
@@ -68,7 +73,6 @@ describe('Test suite for orders service', () => {
                 return mojo.orders.getDetail({
                     order_id : '323c748fcc704608b5c574c1c585e67f',
                 }).then(res => {
-                    console.log(res.data)
                     expect(res.status).toEqual(200)
                 })
             })
