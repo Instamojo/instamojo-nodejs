@@ -53,12 +53,15 @@ describe('Test suite for orders service', () => {
                 return mojo.payments.createRequest({
                     amount : '100000',
                     purpose : 'Jest Integration Testing',
+                    buyer_name: 'Jest User',
+                    email: 'jest@instamojo.com',
+                    phone: '7777777777',
                 })
                 .then(res => {
                     return mojo.orders.createForPaymentRequest({
                         id: res.data.id,
                     }).then(res => {
-                        expect(res.status).toEqual(200)
+                        expect(res.status).toEqual(201)
                         expect(res.data).toEqual(expect.objectContaining({
                             order_id: expect.any(String),
                         }))
@@ -71,7 +74,7 @@ describe('Test suite for orders service', () => {
         return mojomock.authenticate()
             .then(mojo => {
                 return mojo.orders.getDetail({
-                    order_id : '323c748fcc704608b5c574c1c585e67f',
+                    order_id : 'dd2d16790bba415d80b13a9b43e4f0b6',
                 }).then(res => {
                     expect(res.status).toEqual(200)
                 })
@@ -94,7 +97,7 @@ describe('Test suite for orders service', () => {
     test('GET: Transaction detail by id', () => {
         return mojomock.authenticate()
             .then(mojo => {
-                let transaction_id = 'MOJO0311I05N74785520'
+                let transaction_id = 'q29ww7'
                 return mojo.orders.getTransactionDetail({transaction_id})
                     .then(res => {
                         expect(res.status).toEqual(200)
