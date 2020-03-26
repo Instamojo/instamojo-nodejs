@@ -1,10 +1,10 @@
 {
   "name": "instamojo-nodejs",
-  "version": "0.0.5",
+  "version": "1.0.0",
   "description": "Instamojo API Wrapper",
-  "main": "instamojo.js",
+  "main": "lib/Instamojo.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "jest --env=node"
   },
   "repository": {
     "type": "git",
@@ -16,17 +16,21 @@
     "gateway",
     "node"
   ],
-  "author": "Sidhant Panda <sidhantpanda@gmail.com> (http://hashexclude.com)",
-  "license": "ISC",
-  "bugs": {
-    "url": "https://github.com/sidhantpanda/instamojo-nodejs/issues"
-  },
-  "homepage": "https://github.com/sidhantpanda/instamojo-nodejs#readme",
+  "authors": [
+    {
+      "name": "Vinayak Sarawagi",
+      "email": "vinayaksarawagi25@gmail.com"
+    }
+  ],
+  "license": "MIT",
+  "homepage": "https://github.com/Instamojo/instamojo-nodejs",
   "devDependencies": {
-    "chai": "^3.5.0",
-    "mocha": "^2.4.5"
+    "jest": "^25.1.0"
   },
   "dependencies": {
-    "request": "^2.69.0"
+    "axios": "^0.19.2"
+  },
+  "jest": {
+    "verbose": true
   }
 }

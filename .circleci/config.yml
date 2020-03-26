@@ -1,0 +1,14 @@
+version: 2
+jobs:
+    build:
+        working_directory: ~/tmp
+        docker:
+            - image: circleci/node:lts
+        steps:
+            - checkout
+            - run: 
+                name: Install NPM Dependencies
+                command: npm i
+            - run:
+                name: Run Test Cases
+                command: npm run test
